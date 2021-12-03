@@ -101,6 +101,12 @@
         <height>20</height>
        </size>
       </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhHiddenText|Qt::ImhSensitiveData</set>
+      </property>
+      <property name="maxLength">
+       <number>10</number>
+      </property>
      </widget>
     </item>
     <item row="1" column="3">
@@ -133,10 +139,34 @@
      <widget class="QTableWidget" name="data_list">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
+        <horstretch>20</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::AnyKeyPressed|QAbstractItemView::EditKeyPressed</set>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="textElideMode">
+       <enum>Qt::ElideNone</enum>
+      </property>
+      <property name="sortingEnabled">
+       <bool>true</bool>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+       <bool>true</bool>
+      </attribute>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="verticalHeaderCascadingSectionResizes">
+       <bool>true</bool>
+      </attribute>
       <column>
        <property name="text">
         <string>Part number</string>
