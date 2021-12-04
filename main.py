@@ -20,36 +20,25 @@ class Ui(QMainWindow):
         item_list = self.check_user()
         for item in item_list:
             self.acc_box.addItem(item)
-        # self.acc_box.addItem("AOI")
-        # self.acc_box.addItem("TCL")
-        # self.acc_box.addItem("PREWAVE")
-        # self.acc_box.addItem("POSTWAVE")
-        # self.acc_box.addItem("TESTING")
-        # self.acc_box.addItem("COATING")
-        # self.acc_box.addItem("DISPATCH")
 
     def table_setting(self):
         col_width = 170
-        self.data_list.setColumnWidth(0, 200)
-        self.data_list.setColumnWidth(1, col_width)
-        self.data_list.setColumnWidth(2, col_width)
-        self.data_list.setColumnWidth(3, col_width)
-        self.data_list.setColumnWidth(4, col_width)
-        self.data_list.setColumnWidth(5, col_width)
-        self.data_list.setColumnWidth(6, col_width)
-        self.data_list.setColumnWidth(7, col_width)
-        self.data_list.setColumnWidth(8, col_width)
+        self.data_list.setColumnWidth(0, 230)
+        for i in range(1,7):
+            self.data_list.setColumnWidth(i, col_width)
 
     def check_password(self):
         current_user = None
         # print(user, password)
         for user, password in self.get_password():
-            if self.acc_box.currentText() == user and self.pass_entry.text() == password:
-                current_user = user
-                print('Login in :', current_user)
-                break
-            else:
-                print('Wrong input')
+            try:
+                if self.acc_box.currentText() == user and self.pass_entry.text() == password:
+                    current_user = user
+                    print('Login in :', current_user)
+                    break
+            except Exception as e:
+                print(e)
+
 
 
     def check_user(self):
