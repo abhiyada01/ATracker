@@ -30,7 +30,8 @@ class Ui(QMainWindow):
         self.drop_down_setting()
         self.table_setting()
         self.login_but.clicked.connect(self.check_password)
-        self.load_data()
+
+        self.reload_but.clicked.connect(self.load_data)
 
     def drop_down_setting(self):
         item_list = self.check_user()
@@ -67,11 +68,16 @@ class Ui(QMainWindow):
             return user
 
     def load_data(self):
+        import sql_data as sd
+        return_data = sd.find_all()
+
         people = [{"name": "jone", "age": 45, "address": "LA"}]
         row = 0
-        self.data_list.setRowCount(len(people))
-        for person in people:
-            self.data_list.setItem(0, 0, QTableWidgetItem(person["name"]))
+        self.data_list.setRowCount(len(return_data))
+        for person in return_data:
+            print(person[1])
+            self.data_list.setItem(row, 0, QTableWidgetItem(person[0]))
+            self.data_list.setItem(row, 1, QTableWidgetItem(str(person[1])))
             row += 1
 
 
