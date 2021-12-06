@@ -1,0 +1,33 @@
+{
+    "F1":[
+        {
+            "user": "Administrator",
+            "password": "f1@adm"
+        },
+        {
+            "user": "AOI",
+            "password": "f1@aoi"
+        },
+        {
+            "user": "TCL",
+            "password": "f1@tcl"
+        },
+        {
+            "user": "PREWAVE",
+            "password": "f1@pre"
+        },
+        {
+            "user": "POSTWAVE",
+            "password": "f1@post"
+        }
+        ,
+        {
+            "user": "TESTING",
+            "password": "f1@test"
+        },
+        {
+            "user": "COATING",
+            "password": "f1@coating"
+        }
+    ]
+}
