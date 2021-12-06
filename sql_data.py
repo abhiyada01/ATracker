@@ -1,6 +1,7 @@
 import sqlite3 as sq
 
 conn = sq.connect('data.db')
+curses = conn.cursor()
 
 
 # cursor = conn.execute("SELECT * from f1_data")
@@ -18,7 +19,15 @@ conn = sq.connect('data.db')
 # conn.close()
 
 def find_all():
-    cursor = conn.execute("SELECT * from f1_data")
-    aa = [row for row in cursor]
-    conn.close()
-    return aa
+    try:
+        cursor = conn.execute("SELECT * from f1_data")
+        aa = [row for row in cursor]
+
+        return aa
+
+    except Exception as e:
+        conn.close()
+        print(e)
+
+
+
